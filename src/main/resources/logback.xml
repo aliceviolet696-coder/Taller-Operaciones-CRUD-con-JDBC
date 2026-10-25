@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Logs en consola -->
+    <appender name="CONSOLA" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{20} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logs en archivo (carpeta logs/) -->
+    <appender name="ARCHIVO" class="ch.qos.logback.core.FileAppender">
+        <file>logs/tallerjdbc.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="com.krakdev" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLA"/>
+        <appender-ref ref="ARCHIVO"/>
+    </root>
+</configuration>
